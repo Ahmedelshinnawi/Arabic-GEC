@@ -1,0 +1,25 @@
+[project]
+name = "gec"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.10.1",
+    "dotenv>=0.9.9",
+    "fastapi>=0.116.1",
+
+    "pydantic>=2.11.7",
+    "torch>=2.8.0",
+    "transformers>=4.56.0",
+    "uvicorn>=0.35.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+"mypy",
+"black",
+"ruff",
+"isort",
+"pre-commit",
+]
