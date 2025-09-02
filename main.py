@@ -5,7 +5,6 @@ from datetime import datetime
 from pathlib import Path as path
 
 import torch
-from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Path, status
 from pydantic import BaseModel, Field, field_validator
 from transformers import AutoTokenizer, pipeline
@@ -16,7 +15,7 @@ from extract_model_response import (
 )
 from logger import get_logger
 
-load_dotenv()
+
 # Configure PyTorch to avoid warnings and optimize for RTX 2060
 os.environ["TORCH_NCCL_BLOCKING_WAIT"] = "1"
 os.environ["TORCH_CUDNN_V8_API_ENABLED"] = "1"
