@@ -38,7 +38,7 @@ A FastAPI-based web service for correcting Arabic text using AI-powered Grammar 
 3. **Run the application**
 
    ```bash
-    uvicorn main:app --reload
+   uvicorn main:app --reload
 
    # Or using Python directly
    python -m uvicorn main:app --reload
@@ -266,7 +266,7 @@ The project includes development tools configured in `pyproject.toml`:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Model**: [alnnahwi/gemma-3-1b-arabic-gec-v1](https://huggingface.co/alnnahwi/gemma-3-1b-arabic-gec-v1)
 - **Framework**: [FastAPI](https://fastapi.tiangolo.com/)
