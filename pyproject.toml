@@ -17,9 +17,7 @@ dependencies = [
 
 [tool.uv]
 dev-dependencies = [
-"mypy",
 "black",
 "ruff",
 "isort",
-"pre-commit",
 ]
