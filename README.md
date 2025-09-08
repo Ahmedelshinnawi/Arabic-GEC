@@ -79,7 +79,7 @@ GEC/
 
    ```bash
    git clone https://github.com/Ahmedelshinnawi/Arabic-GEC.git
-   cd GEC
+   cd Arabic-GEC
    ```
 
 2. **Install dependencies**
