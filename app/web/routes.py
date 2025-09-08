@@ -1,12 +1,11 @@
-from fastapi import APIRouter, Request, Form, HTTPException
-from fastapi.templating import Jinja2Templates
+from fastapi import APIRouter, Form, HTTPException, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 from app.models.schema import CorrectionCreate
 from app.services.correction_service import correction_service
 from app.services.database_service import database_service
-
 from logger import get_logger
 
 logger = get_logger(__name__)

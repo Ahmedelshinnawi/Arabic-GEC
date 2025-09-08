@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import List, Optional
 
-from app.database import supabase, CORRECTIONS_TABLE
+from app.database import CORRECTIONS_TABLE, supabase
 from app.models.schema import CorrectionCreate, CorrectionInDB
 from logger import get_logger
 

@@ -4,11 +4,10 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from app.api.routes import router as api_router
 from app.config import get_settings
 from app.services.correction_service import correction_service
-from app.api.routes import router as api_router
 from app.web.routes import router as web_router
-
 from logger import get_logger
 
 logger = get_logger(__name__)
