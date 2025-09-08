@@ -1,0 +1,329 @@
+/* Modern Black Theme */
+:root {
+  --primary-bg: #0a0a0a;
+  --secondary-bg: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --accent-bg: #3a3a3a;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  --accent-color: #00d4aa;
+  --accent-hover: #00b894;
+  --success-color: #00b894;
+  --warning-color: #fdcb6e;
+  --danger-color: #e74c3c;
+  --shadow-light: rgba(255, 255, 255, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--primary-bg) 0%,
+    var(--secondary-bg) 100%
+  );
+  color: var(--text-primary);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Modern Cards */
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--shadow-dark);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px var(--shadow-dark);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  border-radius: 16px 16px 0 0 !important;
+  border: none;
+  color: white;
+  padding: 1.25rem;
+}
+
+.card-body {
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 0 0 16px 16px;
+}
+
+/* Modern Buttons */
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  color: white;
+  box-shadow: 0 4px 16px rgba(0, 212, 170, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent-color));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--success-color), #00a085);
+  color: white;
+  box-shadow: 0 4px 16px rgba(0, 184, 148, 0.3);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+  box-shadow: 0 4px 16px rgba(116, 185, 255, 0.3);
+}
+
+.btn-outline-success,
+.btn-outline-danger {
+  border: 2px solid;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-success {
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.btn-outline-success:hover {
+  background: var(--success-color);
+  color: white;
+}
+
+.btn-outline-danger {
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+.btn-outline-danger:hover {
+  background: var(--danger-color);
+  color: white;
+}
+
+/* Modern Navbar */
+.navbar {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-bg),
+    var(--accent-bg)
+  ) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px var(--shadow-dark);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-primary) !important;
+  text-shadow: 0 2px 4px var(--shadow-dark);
+}
+
+.nav-link {
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--accent-color) !important;
+  transform: translateY(-1px);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Modern Form Elements */
+.form-control {
+  background: var(--accent-bg);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: "Cairo", sans-serif;
+  line-height: 1.6;
+  padding: 16px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  background: var(--accent-bg);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 212, 170, 0.25);
+  color: var(--text-primary);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.form-label {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.form-text {
+  color: var(--text-muted);
+}
+
+/* Modern Alerts */
+.alert {
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.alert-success {
+  background: rgba(0, 184, 148, 0.1);
+  color: var(--success-color);
+  border: 1px solid rgba(0, 184, 148, 0.3);
+}
+
+.alert-danger {
+  background: rgba(231, 76, 60, 0.1);
+  color: var(--danger-color);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.alert-warning {
+  background: rgba(253, 203, 110, 0.1);
+  color: var(--warning-color);
+  border: 1px solid rgba(253, 203, 110, 0.3);
+}
+
+/* Modern Footer */
+footer {
+  background: var(--secondary-bg) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 4rem;
+}
+
+footer .text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Special Border Cards */
+.border-warning .card-header {
+  background: linear-gradient(135deg, var(--warning-color), #e17055);
+}
+
+.border-success .card-header {
+  background: linear-gradient(135deg, var(--success-color), #00a085);
+}
+
+.border-start {
+  border-right: 4px solid var(--accent-color) !important;
+  border-left: none !important;
+}
+
+/* Text Colors */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-warning {
+  color: var(--warning-color) !important;
+}
+
+.text-danger {
+  color: var(--danger-color) !important;
+}
+
+.text-success {
+  color: var(--success-color) !important;
+}
+
+/* RTL specific styles */
+[dir="rtl"] .ms-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .navbar-nav {
+  flex-direction: row;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Toast notifications */
+.toast {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px var(--shadow-dark);
+  backdrop-filter: blur(10px);
+}
+
+/* Hover effects for interactive elements */
+.card.shadow-sm:hover {
+  box-shadow: 0 8px 32px var(--shadow-dark) !important;
+}
+
+/* Container improvements */
+.container {
+  max-width: 1200px;
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-bg);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}

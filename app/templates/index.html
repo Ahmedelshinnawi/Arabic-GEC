@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block title %}{{ title }}{% endblock %} {% block
+content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h2 class="card-title mb-0">تصحيح النصوص العربية</h2>
+      </div>
+      <div class="card-body">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endif %}
+
+        <form method="post" action="/correct" id="correctionForm">
+          <div class="mb-3">
+            <label for="text" class="form-label">النص المراد تصحيحه:</label>
+            <textarea
+              class="form-control"
+              id="text"
+              name="text"
+              rows="5"
+              placeholder="أدخل النص العربي هنا..."
+              required
+              maxlength="5000"
+            >
+{{ text if text else '' }}</textarea
+            >
+            <div class="form-text">الحد الأقصى: 5000 حرف</div>
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+              <span
+                class="spinner-border spinner-border-sm d-none"
+                role="status"
+              ></span>
+              تصحيح النص
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

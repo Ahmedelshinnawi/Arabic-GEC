@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block title %}{{ title }}{% endblock %} {% block
+content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>سجل التصحيحات</h2>
+  <a href="/" class="btn btn-primary">تصحيح نص جديد</a>
+</div>
+
+{% if corrections %}
+<div class="row">
+  {% for correction in corrections %}
+  <div class="col-md-6 mb-4">
+    <div class="card shadow-sm">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <small class="text-muted">رقم {{ correction.id }}</small>
+        <small class="text-muted"
+          >{{ correction.created_at.strftime('%Y-%m-%d %H:%M') }}</small
+        >
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <strong>النص الأصلي:</strong>
+          <p class="border-start border-warning ps-3 mt-2">
+            {{ correction.original_text }}
+          </p>
+        </div>
+
+        <div class="mb-3">
+          <strong>النص المُصحح:</strong>
+          <p class="border-start border-success ps-3 mt-2">
+            {{ correction.corrected_text }}
+          </p>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button
+            onclick="copyText('{{ correction.corrected_text }}')"
+            class="btn btn-sm btn-outline-success"
+          >
+            نسخ
+          </button>
+          <form
+            method="post"
+            action="/delete/{{ correction.id }}"
+            class="d-inline"
+            onsubmit="return confirm('هل تريد حذف هذا التصحيح؟')"
+          >
+            <button type="submit" class="btn btn-sm btn-outline-danger">
+              حذف
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-5">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">لا توجد تصحيحات</h5>
+      <p class="card-text">لم يتم إجراء أي تصحيحات بعد.</p>
+      <a href="/" class="btn btn-primary">ابدأ التصحيح الآن</a>
+    </div>
+  </div>
+</div>
+{% endif %} {% endblock %}
