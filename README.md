@@ -268,8 +268,6 @@ uv run black .
 # Sort imports
 uv run isort .
 
-# Lint code
-uv run ruff check .
 ```
 
 ### Development Server
@@ -393,8 +391,6 @@ Log format:
 
 - Follow PEP 8 style guide
 - Add type hints for all functions
-- Write comprehensive docstrings
-- Include tests for new features
 - Update documentation as needed
 
 ## License
