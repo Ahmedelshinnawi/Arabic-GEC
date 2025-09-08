@@ -334,7 +334,7 @@ GEC/
 │       └── main.js                  # Frontend JavaScript
 │
 │
-├── .env                             # Environment variables
+├── .env                            # Environment variables
 ├── run.py                           # Application runner
 ├── pyproject.toml                   # Project dependencies
 ├── uv.lock                          # Dependency lock file
